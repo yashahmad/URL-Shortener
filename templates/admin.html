@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Admin - URLShortener</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}"/>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/> -->
+    </head>
+    <body>
+        <table class="table">
+            <th>
+                <td>Number</td>
+                <td>Long URL</td>
+                <td>Short URL</td>
+                <td>Views</td>
+            </th>
+            {% for i in context %}
+            <tr>
+                <td></td>
+                <td>{{ i.id }}</td>
+                <td>{{ i.long_url }}</td>
+                <td>{{ i.short_url }}</td>
+                <td>{{ i.views }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
