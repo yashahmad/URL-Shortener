@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from helper import id_generator
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'asdjflkjasdf'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urlshortener.db'
 db = SQLAlchemy(app)
 
@@ -44,4 +45,4 @@ def admin():
 	return render_template("admin.html",context=s)
 
 if __name__ == "__main__":
-	app.run()
+	app.run(host='0.0.0.0')
