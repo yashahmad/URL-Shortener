@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>URL Shortener</title>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
+        <link rel="stylesheet" href={{ url_for('static', filename='css/index.css') }} />
+        <!-- <script src={{ url_for('static', filename='js/index.js') }}></script> -->
+    </head>
+    <body>
+        <div class="form__image">
+            <img src="https://img.icons8.com/cute-clipart/128/000000/link.png"/>
+        </div>
+        <div class="form__group field">
+            <form method="POST" action='/'>
+                <input type="input" class="form__field" placeholder="https://www.google.com" name="url" id='name' required />
+                <label for="name" class="form__label">Convert URL to Short URL</label>
+                <button class="form__button" type="submit">Convert</button>
+            </form>         
+        </div>
+        {% if msg %}
+            {{ msg }}
+        {% endif %}
+        {% if url %}
+            <a href="{{ url }}">{{ url }}</a>
+        {% endif %}
+    </body>
+</html>
